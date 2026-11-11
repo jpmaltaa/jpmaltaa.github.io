@@ -1,361 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>João Pedro Malta — Collegiate Esports Management</title>
-<meta name="description" content="President of PUCCAMP Cardinals, the collegiate esports organization of PUC Campinas: 120+ players, 15+ game divisions, 37 titles in ten years.">
-
-<meta property="og:title" content="João Pedro Malta — Collegiate Esports Management">
-<meta property="og:description" content="President of PUCCAMP Cardinals: 120+ players, 15+ game divisions, 37 titles in ten years.">
-<meta property="og:type" content="profile">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --ink:#0B1520;
-    --ink-soft:#2C3B4C;
-    --cardinal:#1B4FA6;
-    --cardinal-deep:#123A7C;
-    --paper:#E8EBEF;
-    --bone:#F5F7FA;
-    --muted:#6C7889;
-    --gold:#C2913A;
-    --rule:rgba(11,21,32,.16);
-  }
-
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Newsreader",Georgia,serif;
-    font-size:19px;
-    line-height:1.62;
-    font-weight:400;
-  }
-
-  .wrap{width:min(1080px,90vw);margin-inline:auto}
-  .measure{max-width:66ch}
-
-  a{color:var(--cardinal-deep);text-decoration:none;border-bottom:1px solid rgba(18,58,124,.35)}
-  a:hover{border-bottom-color:var(--cardinal)}
-  a:focus-visible{outline:3px solid var(--cardinal);outline-offset:3px;border-radius:2px}
-
-  h1,h2,h3,.display{
-    font-family:"Big Shoulders Display","Arial Narrow",sans-serif;
-    font-weight:800;
-    line-height:.92;
-    letter-spacing:-.005em;
-    margin:0;
-  }
-
-  /* ---------- masthead ---------- */
-  .masthead{background:var(--ink);color:var(--bone);padding:clamp(3rem,7vw,6rem) 0 0}
-  .masthead .wrap{display:grid;gap:clamp(1.75rem,4vw,3rem);grid-template-columns:1fr}
-  @media(min-width:820px){
-    .masthead .wrap{grid-template-columns:minmax(0,1fr) 260px;align-items:end}
-  }
-
-  h1{font-size:clamp(4.2rem,13vw,9.5rem);color:var(--bone)}
-  .role{
-    font-family:"Big Shoulders Display",sans-serif;
-    font-weight:500;
-    font-size:clamp(1.35rem,3.4vw,2.1rem);
-    line-height:1.15;
-    color:#A8C4E8;
-    margin:.75rem 0 0;
-    max-width:22ch;
-  }
-  .whereabouts{
-    font-size:.92rem;color:#8C9BAE;margin-top:1.5rem;line-height:1.5;
-  }
-
-  .portrait{
-    width:100%;aspect-ratio:1;object-fit:cover;
-    border-radius:50%;
-    border:3px solid var(--cardinal);
-    background:var(--cardinal-deep);
-    display:block;
-  }
-
-  /* ---------- record band ---------- */
-  .record{
-    background:var(--cardinal);
-    color:var(--bone);
-    margin-top:clamp(2.5rem,6vw,4.5rem);
-    padding:clamp(2rem,4.5vw,3rem) 0;
-  }
-  .record dl{
-    margin:0;display:grid;gap:clamp(1.5rem,3vw,2rem);
-    grid-template-columns:repeat(2,1fr);
-  }
-  @media(min-width:760px){.record dl{grid-template-columns:repeat(4,1fr)}}
-  .record dt{
-    font-family:"Big Shoulders Display",sans-serif;
-    font-weight:800;font-size:clamp(3.4rem,8vw,5rem);line-height:.85;
-    opacity:0;transform:translateY(.35em);
-    animation:lift .7s cubic-bezier(.2,.7,.3,1) forwards;
-  }
-  .record div:nth-child(1) dt{animation-delay:.05s}
-  .record div:nth-child(2) dt{animation-delay:.14s}
-  .record div:nth-child(3) dt{animation-delay:.23s}
-  .record div:nth-child(4) dt{animation-delay:.32s}
-  .record dd{
-    margin:.55rem 0 0;font-size:.95rem;line-height:1.4;
-    color:#D3E2F5;max-width:20ch;
-  }
-  @keyframes lift{to{opacity:1;transform:none}}
-  @media(prefers-reduced-motion:reduce){
-    .record dt{animation:none;opacity:1;transform:none}
-  }
-
-  /* ---------- sections ---------- */
-  section{padding:clamp(3rem,7vw,5.5rem) 0;border-bottom:1px solid var(--rule)}
-  section:last-of-type{border-bottom:0}
-  h2{
-    font-size:clamp(2rem,4.6vw,3rem);
-    color:var(--cardinal-deep);
-    margin-bottom:1.75rem;
-  }
-  h3{
-    font-family:"Newsreader",serif;font-weight:500;font-size:1.12rem;
-    line-height:1.35;letter-spacing:0;margin:0 0 .3rem;
-  }
-  p{margin:0 0 1.15rem}
-  p:last-child{margin-bottom:0}
-  .lede{font-size:1.18rem;line-height:1.55}
-
-  /* ---------- career sequence ---------- */
-  ol.path{list-style:none;margin:0;padding:0}
-  ol.path li{
-    display:grid;grid-template-columns:1fr;gap:.25rem .5rem;
-    padding:1.4rem 0;border-top:1px solid var(--rule);
-  }
-  @media(min-width:700px){
-    ol.path li{grid-template-columns:7.5rem 1fr;gap:0 2rem;align-items:baseline}
-  }
-  .yr{
-    font-family:"Big Shoulders Display",sans-serif;font-weight:700;
-    font-size:1.5rem;color:var(--cardinal);line-height:1.1;white-space:nowrap;
-  }
-  ol.path p{font-size:1rem;color:var(--ink-soft);margin:.35rem 0 0;max-width:60ch}
-
-  /* ---------- built list ---------- */
-  .built{display:grid;gap:0;margin:0;padding:0;list-style:none}
-  .built li{padding:1.4rem 0;border-top:1px solid var(--rule)}
-  @media(min-width:820px){
-    .built{grid-template-columns:1fr 1fr;column-gap:3.5rem}
-  }
-  .built p{font-size:1rem;color:var(--ink-soft);margin:.35rem 0 0}
-
-  /* ---------- player card ---------- */
-  .player{
-    background:var(--ink);color:var(--bone);
-    padding:clamp(2rem,4.5vw,3rem);
-    display:grid;gap:2rem;grid-template-columns:1fr;
-  }
-  @media(min-width:760px){.player{grid-template-columns:auto 1fr;gap:3.5rem;align-items:center}}
-  .nick{
-    font-family:"Big Shoulders Display",sans-serif;font-weight:800;
-    font-size:clamp(3rem,7vw,4.4rem);line-height:.9;color:var(--bone);
-  }
-  .nick span{display:block;font-size:.95rem;font-family:"Newsreader",serif;
-    font-weight:400;color:#8C9BAE;letter-spacing:0;margin-top:.6rem;line-height:1.4}
-  .player p{color:#CFDAE7;font-size:1.02rem}
-  .player strong{color:var(--gold);font-weight:500}
-
-  /* ---------- events ---------- */
-  table{width:100%;border-collapse:collapse;font-size:.98rem}
-  caption{text-align:left;color:var(--muted);font-size:.92rem;padding-bottom:.9rem}
-  th,td{text-align:left;padding:.85rem .9rem .85rem 0;border-top:1px solid var(--rule);vertical-align:top}
-  th{
-    font-family:"Big Shoulders Display",sans-serif;font-weight:700;
-    font-size:1.05rem;color:var(--cardinal-deep);
-  }
-  td:first-child{white-space:nowrap;color:var(--muted);font-size:.9rem}
-
-  /* ---------- background ---------- */
-  .bg-grid{display:grid;gap:0;list-style:none;margin:0;padding:0}
-  .bg-grid li{padding:1.25rem 0;border-top:1px solid var(--rule)}
-  .bg-grid .when{color:var(--muted);font-size:.9rem;display:block;margin-top:.2rem}
-
-  /* ---------- footer ---------- */
-  footer{background:var(--ink);color:var(--bone);padding:clamp(3rem,7vw,5rem) 0}
-  footer h2{color:var(--bone);margin-bottom:1.5rem}
-  .links{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin:0;padding:0;list-style:none;font-size:1.05rem}
-  footer a{color:#A8C4E8;border-bottom-color:rgba(168,196,232,.4)}
-  footer a:hover{color:var(--bone);border-bottom-color:var(--bone)}
-  .colophon{margin-top:2.5rem;font-size:.85rem;color:#79879A;max-width:52ch}
-
-  .skip{position:absolute;left:-9999px}
-  .skip:focus{left:1rem;top:1rem;background:var(--bone);color:var(--ink);padding:.6rem 1rem;z-index:9}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Pedro Malta, AI Builder</title>
+    <meta name="description" content="João Pedro Malta, de Campinas (SP), constrói produtos e automações com IA: produtos jurídicos com IA na LegalOps Tools, agentes com Claude e um assistente com RAG e guardrails no TCC.">
+    <meta property="og:title" content="João Pedro Malta, AI Builder">
+    <meta property="og:description" content="Produtos e automações com IA para problemas reais de negócio.">
+    <meta property="og:type" content="profile">
+    <meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1531" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232456e0'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='white'%3EJM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="masthead">
-  <div class="wrap">
-    <div>
-      <h1>João Pedro<br>Malta</h1>
-      <p class="role">President of PUCCAMP Cardinals, the collegiate esports organization of PUC Campinas</p>
-      <p class="whereabouts">Campinas, Brazil · Information Systems, PUC Campinas (class of 2026)<br>Fluent English (Cambridge certified)</p>
-    </div>
-    <!-- Troque o src abaixo pela sua foto. Coloque o arquivo na raiz do repositório como portrait.jpg -->
-    <img class="portrait" src="portrait.jpg" alt="Portrait of João Pedro Malta">
-  </div>
-</header>
-
-<div class="record">
-  <div class="wrap">
-    <dl>
-      <div><dt>120+</dt><dd>active players under the organization</dd></div>
-      <div><dt>15+</dt><dd>competitive game divisions</dd></div>
-      <div><dt>37</dt><dd>titles won in ten years</dd></div>
-      <div><dt>6</dt><dd>of those won as a player</dd></div>
-    </dl>
-  </div>
-</div>
-
-<main id="main" class="wrap">
-
-  <section>
-    <div class="measure">
-      <p class="lede">I run a collegiate esports organization with more than 120 players across 15 game divisions, and I have been part of it since 2023 — first as a Rocket League player, then as a division director, and since 2025 as its president.</p>
-      <p>PUCCAMP Cardinals was founded in 2016 and won its first title in 2017. Today it fields teams in League of Legends, CS2, Valorant, Rocket League, Rainbow Six, EA FC and a dozen other games, runs a women's league called Canaries, and competes out of a dedicated gaming arena on campus that opened in October 2025.</p>
-      <p>My day job is in technology — I work as a junior analyst in technological innovation at a legal tech company, and I finish my Information Systems degree in December 2026. That background is why I run the organization the way I do: with processes, documentation and data, not just enthusiasm. What I want next is the management education and the international network to do this professionally.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>How I got here</h2>
-    <ol class="path">
-      <li>
-        <span class="yr">2023</span>
-        <div>
-          <h3>Rocket League player</h3>
-          <p>Joined the Cardinals roster as a competitor and started playing the Brazilian collegiate circuit.</p>
+    <header class="nav">
+        <div class="wrap nav-inner">
+            <a href="#inicio" class="logo" aria-label="João Pedro Malta, início">jpm<span>.</span></a>
+            <nav class="nav-links" aria-label="Seções">
+                <a href="#cases">Cases</a>
+                <a href="#llms">LLMs</a>
+                <a href="#experiencia">Experiência</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <a class="btn btn-small" href="Curriculo_Joao_Pedro_Malta.pdf" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>
+                Currículo
+            </a>
         </div>
-      </li>
-      <li>
-        <span class="yr">2023—24</span>
-        <div>
-          <h3>Director, Rocket League division</h3>
-          <p>Took over the division: roster building, tryouts, tournament entries and match scheduling. Rocket League has since become the organization's second most decorated game.</p>
-        </div>
-      </li>
-      <li>
-        <span class="yr">2025—</span>
-        <div>
-          <h3>President</h3>
-          <p>Responsible for the whole organization — leadership structure, competitive divisions, sponsorship, content, events and the arena.</p>
-        </div>
-      </li>
-    </ol>
-  </section>
+    </header>
 
-  <section>
-    <h2>What I have built as president</h2>
-    <ul class="built">
-      <li>
-        <h3>A gaming arena on campus</h3>
-        <p>Opened in October 2025 and now the home venue for training, tryouts and in-person tournaments.</p>
-      </li>
-      <li>
-        <h3>A partnership with Red Bull Brazil</h3>
-        <p>Brand partnership supporting the organization's competitive and community activity.</p>
-      </li>
-      <li>
-        <h3>Canaries, a women's league</h3>
-        <p>Dedicated Valorant and League of Legends rosters, created to open a route into competition that the main pipeline was not reaching.</p>
-      </li>
-      <li>
-        <h3>A sponsorship media kit</h3>
-        <p>Priced inventory for jersey placements, sold directly to local sponsors — the organization's own revenue, alongside merchandise.</p>
-      </li>
-      <li>
-        <h3>An institutional handbook</h3>
-        <p>Written governance: mission, leadership structure, staff areas, member journey, annual calendar, code of conduct and succession rules.</p>
-      </li>
-      <li>
-        <h3>A restructuring plan for 2026—27</h3>
-        <p>A two-year plan to professionalize the organization — defined roles, playbooks for division directors, a content pipeline, and a presidential succession process. The stated goal is an organization that runs without depending on its president.</p>
-      </li>
-    </ul>
-  </section>
+    <main id="conteudo">
+        <section class="hero wrap" id="inicio">
+            <div class="hero-copy">
+                <p class="hello"><span class="name">João Pedro Malta</span><span class="status"><span class="dot" aria-hidden="true"></span>Aberto a oportunidades</span></p>
+                <h1>Transformo trabalho manual em produtos com IA.</h1>
+                <p class="lead">
+                    Na LegalOps Tools, construí produtos jurídicos sob medida para cada cliente, do primeiro
+                    contato até a publicação, com Airtable, Make, Softr e IA. Também construo agentes com Claude
+                    e estudo Sistemas de Informação na PUC-Campinas.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="Curriculo_Joao_Pedro_Malta.pdf" download>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>
+                        Baixar currículo
+                    </a>
+                    <a class="btn btn-ghost" href="#cases">Ver o que construí</a>
+                </div>
+                <ul class="socials">
+                    <li><a href="https://www.linkedin.com/in/joaopedromalta" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/jpmaltaa" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="mailto:joaopedromalta1@gmail.com">joaopedromalta1@gmail.com</a></li>
+                </ul>
+            </div>
 
-  <section>
-    <div class="player">
-      <p class="nick">Jpmaltaa<span>Rocket League · PUCCAMP Cardinals</span></p>
-      <div>
-        <p>I still compete. <strong>Six titles</strong> in the collegiate and amateur circuit put me joint second on the organization's all-time list of most decorated players, and I captained the roster that won our 2026 in-house championship.</p>
-        <p>Playing and managing at the same time is the reason I understand both sides of the table — what a roster needs from its organization, and what an organization needs from its rosters.</p>
-      </div>
-    </div>
-  </section>
+            <figure class="flow" id="flow" aria-labelledby="flow-title">
+                <div class="flow-head">
+                    <span class="flow-title mono" id="flow-title" translate="no">resumo-de-contrato</span>
+                    <span class="flow-status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="flow-status-text">Pronto</span></span>
+                </div>
+                <ol class="flow-steps">
+                    <li style="--i:0">
+                        <span class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+                        <div><strong>Contrato chega no Airtable</strong><span>Gatilho: novo registro</span></div>
+                    </li>
+                    <li style="--i:1">
+                        <span class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+                        <div><strong>Espera 10 segundos</strong><span>O anexo ainda é só uma URL</span></div>
+                    </li>
+                    <li style="--i:2">
+                        <span class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 9-9 9-9-9z"/></svg></span>
+                        <div><strong>O anexo existe?</strong><span>Se sim, segue</span></div>
+                    </li>
+                    <li style="--i:3">
+                        <span class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span>
+                        <div><strong>IA resume o contrato</strong><span>Entrega um rascunho</span></div>
+                    </li>
+                    <li style="--i:4">
+                        <span class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+                        <div><strong>O advogado decide</strong><span>Revisa e dá a palavra final</span></div>
+                    </li>
+                </ol>
+                <figcaption class="flow-foot">
+                    <span>Um fluxo real que corrigi em produção. <a href="#case-anexo">Ler a história</a></span>
+                    <button type="button" class="replay" id="replay">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg>
+                        Rodar de novo
+                    </button>
+                </figcaption>
+            </figure>
+        </section>
 
-  <section>
-    <h2>Events I have run</h2>
-    <table>
-      <caption>Copa Cardinals, 2026 season — Rocket League, collegiate teams from across the region.</caption>
-      <tbody>
-        <tr>
-          <td>8 August 2026</td>
-          <th scope="row">Copa Cardinals 3v3, online</th>
-          <td>Six invited university teams, seeded bracket with byes, ten-minute walkover rule to hold the schedule.</td>
-        </tr>
-        <tr>
-          <td>22 August 2026</td>
-          <th scope="row">Copa Cardinals Arena, on site</th>
-          <td>Seven teams, single elimination with a consolation route and a third-place match, roughly five hours of play. Held on the organization's tenth anniversary.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+        <section id="cases" class="wrap section" aria-labelledby="cases-title">
+            <div class="section-head">
+                <h2 id="cases-title">O que construí</h2>
+                <p>Problemas de empresas e de pessoas reais, e o que eu fiz para resolver.</p>
+            </div>
 
-  <section>
-    <h2>Background</h2>
-    <ul class="bg-grid">
-      <li>
-        <h3>Junior Analyst, Technological Innovation — LegalOps Tools</h3>
-        <span class="when">Campinas, Brazil · since January 2026, after an internship at the same company from May to December 2025</span>
-      </li>
-      <li>
-        <h3>Intern — EMP Systems</h3>
-        <span class="when">February 2023 to January 2025</span>
-      </li>
-      <li>
-        <h3>BSc Information Systems — PUC Campinas</h3>
-        <span class="when">Graduating December 2026</span>
-      </li>
-      <li>
-        <h3>English</h3>
-        <span class="when">Advanced, Cambridge certified</span>
-      </li>
-    </ul>
-  </section>
+            <div class="cases">
+                <article class="case case-legal">
+                    <div class="case-top">
+                        <span class="tag tag-prod">Em produção, usado por clientes</span>
+                        <span class="org">LegalOps Tools</span>
+                    </div>
+                    <h3>IA dentro de produtos jurídicos</h3>
+                    <p>
+                        A LegalOps Tools entrega produtos 100% personalizados por cliente para contratos, processos,
+                        LGPD, third party e background check. Integrei IA aos produtos, em uso por departamentos jurídicos de empresas:
+                    </p>
+                    <ul class="checks">
+                        <li>Verificação de cláusulas ligadas à reforma tributária</li>
+                        <li>Geração de minutas</li>
+                        <li>Análise de risco de processos</li>
+                        <li>Resumo inteligente de contratos</li>
+                    </ul>
+                    <p class="rule"><strong>Regra de produto:</strong> a IA nunca dá a resposta final. Quem decide é o advogado.</p>
+                    <p class="result"><strong>Resultado:</strong> mais de 200 usuários usavam o que construí.</p>
+                    <ul class="chips"><li>Airtable</li><li>Make</li><li>Softr</li><li>LLM</li></ul>
+                </article>
 
-</main>
+                <article class="case case-bug" id="case-anexo">
+                    <div class="case-top">
+                        <span class="tag tag-fix">Automação em produção</span>
+                        <span class="org">LegalOps Tools</span>
+                    </div>
+                    <h3>O anexo que a IA não via</h3>
+                    <dl class="story">
+                        <div><dt>Problema</dt><dd>O resumo por IA dizia que o contrato não tinha anexo, mas o anexo estava lá.</dd></div>
+                        <div><dt>Causa</dt><dd>O Airtable carrega arquivos como URL, e a automação disparava antes de o arquivo estar disponível.</dd></div>
+                        <div><dt>Solução</dt><dd>Uma espera de 10 segundos e, depois, uma condição que confere se o arquivo existe antes de chamar a IA.</dd></div>
+                        <div><dt>Resultado</dt><dd>Bug resolvido no produto que os clientes usam.</dd></div>
+                    </dl>
+                    <ul class="chips"><li>Make</li><li>Airtable</li><li>Depuração</li></ul>
+                </article>
 
-<footer>
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <ul class="links">
-      <li><a href="https://www.linkedin.com/in/joaopedromalta">LinkedIn</a></li>
-      <li><a href="https://github.com/jpmaltaa">GitHub</a></li>
-      <li><a href="https://www.instagram.com/puccampcardinals">Cardinals on Instagram</a></li>
-      <li><a href="https://www.twitch.tv/pucccardinals">Cardinals on Twitch</a></li>
-      <li><a href="mailto:joaopedromalta1@gmail.com">Email</a></li>
-    </ul>
-    <p class="colophon">PUCCAMP Cardinals is the collegiate esports organization of Pontifícia Universidade Católica de Campinas, founded in 2016. Figures current as of the 2026 season.</p>
-  </div>
-</footer>
+                <article class="case case-feature">
+                    <div class="feature-text">
+                        <div class="case-top">
+                            <span class="tag tag-wip">Agentes com RAG, TCC em grupo</span>
+                            <span class="org">PUC-Campinas</span>
+                        </div>
+                        <h3>Assistente virtual com agentes, RAG e guardrails</h3>
+                        <p>
+                            <strong>Global Training Technology</strong> é uma plataforma web para uma escola de treinamentos
+                            profissionais, como Excel, Power BI e SolidWorks. Tem venda de cursos com pagamento pelo
+                            Mercado Pago, área do aluno e painel administrativo com perfis de acesso. É um projeto
+                            em grupo, com orientador, ainda em andamento.
+                        </p>
+                        <p>
+                            O LLM roda pela API da Groq, com modelo configurável. A plataforma também gera um rascunho
+                            de curso a partir de um PDF.
+                        </p>
+                        <p class="soon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg>
+                            Demo em vídeo em breve
+                        </p>
+                        <ul class="chips"><li>Python</li><li>FastAPI</li><li>Angular</li><li>SQLite</li><li>pytest</li><li>Playwright</li><li>TDD</li><li>RBAC e JWT</li></ul>
+                    </div>
+                    <ul class="parts" aria-label="Como o assistente funciona">
+                        <li><strong>Agente gerente</strong>Classifica a intenção da pergunta e encaminha para o agente do curso certo.</li>
+                        <li><strong>RAG nas políticas da escola</strong>Busca com BM25 em SQLite FTS5, cita a fonte e responde “não sei” quando não encontra.</li>
+                        <li><strong>Guardrails</strong>Proteção contra prompt injection, mascaramento de dados pessoais e filtros de preço, desconto e links.</li>
+                        <li><strong>Observabilidade e testes</strong>Tokens, latência e custo por chamada, mais testes adversariais do chatbot.</li>
+                    </ul>
+                </article>
 
+                <article class="case">
+                    <div class="case-top">
+                        <span class="tag">Ferramenta interna</span>
+                        <span class="org">LegalOps Tools</span>
+                    </div>
+                    <h3>De planilha diária a plataforma</h3>
+                    <dl class="story">
+                        <div><dt>Antes</dt><dd>Uma pessoa consultava um site todos os dias e registrava as atualizações à mão em uma planilha.</dd></div>
+                        <div><dt>Depois</dt><dd>Construí a ECAC do início ao fim, uma plataforma própria para uma empresa do grupo.</dd></div>
+                        <div><dt>Resultado</dt><dd>Cerca de 2 horas de trabalho manual economizadas por dia.</dd></div>
+                    </dl>
+                    <ul class="chips"><li>Airtable</li><li>Make</li><li>Softr</li></ul>
+                </article>
+
+                <article class="case">
+                    <div class="case-top">
+                        <span class="tag">Agente, uso diário</span>
+                        <span class="org">Claude</span>
+                    </div>
+                    <h3>Meu agente de toda manhã</h3>
+                    <p>
+                        Um agente com Claude, no celular. Todo dia de manhã ele consulta meu Google Drive e meu Todoist
+                        e me devolve a priorização do dia. <a class="inline-link" href="#prompt-agente">Ver o prompt</a>
+                    </p>
+                    <div class="mini-chat" aria-hidden="true">
+                        <span class="bubble">Bom dia, o que vem primeiro hoje?</span>
+                        <span class="bubble bubble-ai">Consultei seu Drive e seu Todoist. Esta é a priorização de hoje…</span>
+                    </div>
+                    <ul class="chips"><li>Claude</li><li>Google Drive</li><li>Todoist</li></ul>
+                </article>
+
+                <article class="case">
+                    <div class="case-top">
+                        <span class="tag">Automação</span>
+                        <span class="org">LegalOps Tools</span>
+                    </div>
+                    <h3>Automações que o time consegue manter</h3>
+                    <ul class="checks">
+                        <li>Refatorei automações grandes no Make para ficarem mais estáveis, rápidas e fáceis de manter</li>
+                        <li>Criei uma lógica de if/else antes de o Make ter isso nativamente</li>
+                        <li>Migrei interfaces de Miniextensions para Softr</li>
+                        <li>No Clearance Check, minhas melhorias de UI/UX viraram padrão do produto</li>
+                    </ul>
+                    <ul class="chips"><li>Make</li><li>Softr</li><li>UI/UX</li></ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="llms" class="wrap section" aria-labelledby="llms-title">
+            <div class="section-head">
+                <h2 id="llms-title">Como construo com LLMs</h2>
+                <p>As decisões que deixam a IA útil sem perder o controle. As do TCC são do grupo e estão no código do projeto.</p>
+            </div>
+
+            <div class="llm-grid">
+                <figure class="pipe">
+                    <figcaption>
+                        <h3>Ordem dos filtros de entrada do assistente</h3>
+                        <p>Toda mensagem passa por estas etapas, nesta ordem. Se uma delas barra a mensagem, o modelo nem é chamado.</p>
+                    </figcaption>
+                    <ol class="pipe-steps">
+                        <li><span class="step-n" aria-hidden="true">1</span><div><strong>Heurística contra prompt injection</strong>Barra tentativas de mudar as instruções do assistente.</div></li>
+                        <li><span class="step-n" aria-hidden="true">2</span><div><strong>Fora do domínio</strong>Perguntas que não são sobre a escola não seguem adiante.</div></li>
+                        <li><span class="step-n" aria-hidden="true">3</span><div><strong>Mascaramento de dados pessoais</strong>A mensagem é gravada já mascarada.</div></li>
+                        <li><span class="step-n" aria-hidden="true">4</span><div><strong>Classificador por LLM, opcional</strong>Recebe só a mensagem mascarada. Se ele falhar, a heurística continua valendo e o chat não cai.</div></li>
+                    </ol>
+                </figure>
+
+                <ul class="rules">
+                    <li>
+                        <h3>O modelo não monta ações</h3>
+                        <p>No TCC, os botões de matrícula vêm só de dados do servidor, nunca do texto gerado pelo LLM.</p>
+                    </li>
+                    <li>
+                        <h3>Sem fonte, sem resposta</h3>
+                        <p>Quando a busca não acha um trecho da política da escola, o assistente responde “não sei” com um texto fixo. Quando acha, cita a fonte.</p>
+                    </li>
+                    <li>
+                        <h3>Conferir a entrada antes de chamar a IA</h3>
+                        <p>Na LegalOps, a IA só é acionada depois de uma condição confirmar que o anexo existe.</p>
+                    </li>
+                    <li>
+                        <h3>A IA sugere, a pessoa decide</h3>
+                        <p>Nos produtos jurídicos, a IA nunca dá a resposta final. O advogado decide.</p>
+                    </li>
+                    <li>
+                        <h3>Medir cada chamada</h3>
+                        <p>O assistente do TCC registra tokens, latência e custo por chamada, e o modelo é configurável.</p>
+                    </li>
+                    <li>
+                        <h3>Atacar o próprio chatbot</h3>
+                        <p>Testes adversariais tentam quebrar o assistente antes que um usuário tente.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <figure class="prompt" id="prompt-agente">
+                <figcaption class="prompt-intro">
+                    <h3>O prompt do meu agente de toda manhã</h3>
+                    <p>Não saiu de primeira. Fui ajustando o agente no uso diário, e esta é a versão consolidada.</p>
+                    <ul class="prompt-notes">
+                        <li><strong>Fontes explícitas.</strong> O agente sabe o que buscar em cada ferramenta.</li>
+                        <li><strong>Critério de prioridade escrito.</strong> A ordem não fica a cargo do modelo.</li>
+                        <li><strong>Formato fixo.</strong> A resposta cabe na tela do celular e é lida em segundos.</li>
+                        <li><strong>Limites claros.</strong> Ele só consulta, não inventa prioridade e avisa quando uma fonte falha.</li>
+                    </ul>
+                </figcaption>
+                <div class="prompt-code">
+                    <div class="prompt-bar">
+                        <span class="mono" translate="no">agente-diario.md</span>
+                        <button type="button" class="replay" id="copy-prompt">Copiar</button>
+                    </div>
+<pre class="mono" id="prompt-text" translate="no">Você é meu assistente de planejamento diário.
+Todo dia de manhã, monte a priorização do meu dia.
+
+## Fontes
+1. Todoist: tarefas atrasadas, que vencem hoje
+   ou nos próximos 3 dias.
+2. Google Drive: documentos que editei nos
+   últimos 3 dias e arquivos com prazo no
+   título ou no conteúdo.
+
+## Como priorizar
+1. O que está atrasado ou vence hoje.
+2. O que outras pessoas estão esperando de mim.
+3. Entregas grandes dos próximos 3 dias:
+   sugira o primeiro passo para hoje.
+4. O resto só entra se sobrar espaço.
+
+## Formato da resposta
+Foco do dia: uma frase.
+Top 3: as três tarefas mais importantes, cada
+uma com o motivo em uma linha e o link.
+Se sobrar tempo: até 5 itens.
+Atenção: prazos próximos ou conflitos.
+A resposta precisa caber na tela do celular.
+
+## Regras
+- Apenas consulte o Todoist e o Drive.
+  Não crie, altere nem conclua nada.
+- Use só o que encontrou nas fontes.
+- Se uma fonte não responder, diga qual
+  e siga com a outra.
+- Se nada for urgente, diga isso em vez
+  de inventar prioridade.</pre>
+                </div>
+            </figure>
+        </section>
+
+        <section id="experiencia" class="wrap section" aria-labelledby="exp-title">
+            <div class="section-head">
+                <h2 id="exp-title">Experiência</h2>
+            </div>
+
+            <ol class="timeline">
+                <li>
+                    <p class="when">mai/2025 a nov/2026</p>
+                    <div>
+                        <h3>LegalOps Tools</h3>
+                        <p class="where">Legal tech em Campinas</p>
+                        <ul class="roles">
+                            <li><strong>Analista Jr</strong> <span>jan/2026 a nov/2026</span></li>
+                            <li><strong>Estagiário em Inovação Tecnológica</strong> <span>mai/2025 a dez/2025, depois promovido</span></li>
+                        </ul>
+                        <ul class="bullets">
+                            <li>Produtos personalizados por cliente, do primeiro contato à publicação: banco de dados, interfaces, perfis de acesso, fluxograma, manual e treinamento. Mais de 200 usuários usavam o que construí.</li>
+                            <li>Plataforma ECAC, que economizou cerca de 2 horas de trabalho manual por dia.</li>
+                            <li>IA nos produtos de contratos e processos, sempre com o advogado na decisão final.</li>
+                            <li>Evoluí o Clearance Check, de background check, quase sozinho.</li>
+                            <li>Atendi clientes diretamente, em tickets, reuniões e correções.</li>
+                            <li>Treinei o time, deixei manuais no backlog e treinei um estagiário novo que eu mesmo indiquei.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="when">fev/2023 a jan/2025</p>
+                    <div>
+                        <h3>EMP Sistemas e Serviços</h3>
+                        <ul class="roles">
+                            <li><strong>Estagiário de desenvolvimento</strong> <span>jul/2023 a jan/2025</span></li>
+                            <li><strong>Estagiário de operação</strong> <span>fev/2023 a jul/2023</span></li>
+                        </ul>
+                        <ul class="bullets">
+                            <li>Desenvolvi telas e regras de negócio em framework Java proprietário, e procedures, tabelas e consultas em SQL Server (T-SQL), com testes e revisão de código.</li>
+                            <li>Resolvi consultas lentas e melhorei a interface de telas existentes.</li>
+                            <li>Na operação, fiz atendimento nível 1, monitoramento e abertura de tickets para o time de desenvolvimento.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="when">2023 até hoje</p>
+                    <div>
+                        <h3>PUCCAMP Cardinals</h3>
+                        <p class="where">E-Sports universitário da PUC-Campinas</p>
+                        <ul class="roles">
+                            <li><strong>Presidente</strong> <span>desde jan/2025</span></li>
+                        </ul>
+                        <p class="body">Lidero a organização: pessoas, estrutura e crescimento.</p>
+                        <details class="more">
+                            <summary><span class="more-open">Ver mais</span><span class="more-close">Ver menos</span></summary>
+                            <div class="more-body">
+                                <ol class="mini-path" aria-label="Trajetória na PUCCAMP Cardinals">
+                                    <li><span>2023</span>Jogador</li>
+                                    <li><span>fim de 2023 a 2024</span>Diretor de Rocket League</li>
+                                    <li><span>desde jan/2025</span>Presidente</li>
+                                </ol>
+                                <dl class="growth">
+                                    <div><dt>Staff</dt><dd><span class="from">2</span> para <span class="to">52</span> pessoas</dd></div>
+                                    <div><dt>Modalidades</dt><dd><span class="from">3</span> para <span class="to">20</span></dd></div>
+                                    <div><dt>Instagram</dt><dd><span class="from">1 mil</span> para <span class="to">3 mil</span> seguidores</dd></div>
+                                    <div><dt>Em 2026</dt><dd><span class="to">36</span> resultados competitivos, com disputas ainda pela frente</dd></div>
+                                </dl>
+                                <p class="body">Estruturei o modelo de gestão, com processos, metas e áreas, captei parcerias e criei uma equipe feminina.</p>
+                                <p class="body">Também fui presidente da Liga das Atléticas de TI, de 2023 a 2025, cuidando de mídias sociais, decisões estratégicas, seleção da gestão e crescimento.</p>
+                            </div>
+                        </details>
+                    </div>
+                </li>
+                <li>
+                    <p class="when">2023 a dez/2027</p>
+                    <div>
+                        <h3>PUC-Campinas</h3>
+                        <ul class="roles">
+                            <li><strong>Bacharelado em Sistemas de Informação</strong> <span>formatura prevista para dez/2027</span></li>
+                        </ul>
+                        <p class="body">Inglês avançado, com o First Certificate in English (Cambridge). Curso de POO com Java, do Curso em Vídeo.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="ferramentas" class="wrap section" aria-labelledby="tools-title">
+            <div class="section-head">
+                <h2 id="tools-title">Ferramentas que uso</h2>
+            </div>
+            <div class="tools">
+                <div>
+                    <h3>IA e agentes</h3>
+                    <ul class="chips chips-lg"><li>Claude</li><li>Claude Code</li><li>Cursor</li><li>Replit</li><li>LLM via API (Groq)</li><li>Agentes com roteamento</li><li>RAG</li><li>Guardrails</li></ul>
+                </div>
+                <div>
+                    <h3>Automação e no-code</h3>
+                    <ul class="chips chips-lg"><li>Make</li><li>n8n</li><li>Airtable</li><li>Softr</li><li>Webhooks</li></ul>
+                </div>
+                <div>
+                    <h3>Desenvolvimento</h3>
+                    <ul class="chips chips-lg"><li>Python</li><li>FastAPI</li><li>Java</li><li>Angular</li><li>SQL Server e T-SQL</li><li>MySQL</li><li>SQLite</li><li>Modelagem de dados</li><li>pytest</li><li>Playwright</li><li>TDD</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="wrap section" aria-labelledby="contact-title">
+            <div class="contact">
+                <h2 id="contact-title">Vamos conversar</h2>
+                <p>Estou aberto a oportunidades para construir com IA. O jeito mais rápido de falar comigo é por e-mail.</p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="mailto:joaopedromalta1@gmail.com">Enviar e-mail</a>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/joaopedromalta" target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="btn btn-ghost" href="https://github.com/jpmaltaa" target="_blank" rel="noopener">GitHub</a>
+                    <a class="btn btn-ghost" href="Curriculo_Joao_Pedro_Malta.pdf" download>Baixar currículo</a>
+                </div>
+                <p class="email">joaopedromalta1@gmail.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wrap footer">
+        <span>© 2026 João Pedro Malta, Campinas (SP). Site construído com Claude Code.</span>
+        <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script>
+        // O fluxo do topo roda uma vez ao abrir a página e de novo quando a pessoa pede.
+        (function () {
+            var flow = document.getElementById('flow');
+            var text = flow.querySelector('.flow-status-text');
+            var btn = document.getElementById('replay');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var timer;
+            function run() {
+                clearTimeout(timer);
+                flow.classList.remove('is-running', 'is-done');
+                if (reduce) { flow.classList.add('is-done'); text.textContent = 'Concluído'; return; }
+                void flow.offsetWidth;
+                flow.classList.add('is-running');
+                text.textContent = 'Rodando…';
+                timer = setTimeout(function () {
+                    flow.classList.remove('is-running');
+                    flow.classList.add('is-done');
+                    text.textContent = 'Concluído';
+                }, 4200);
+            }
+            btn.addEventListener('click', run);
+            setTimeout(run, 500);
+        })();
+        // Copiar o prompt do agente
+        (function () {
+            var b = document.getElementById('copy-prompt');
+            var t = document.getElementById('prompt-text');
+            b.addEventListener('click', function () {
+                if (!navigator.clipboard) { return; }
+                navigator.clipboard.writeText(t.textContent).then(function () {
+                    b.textContent = 'Copiado';
+                    setTimeout(function () { b.textContent = 'Copiar'; }, 2000);
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
